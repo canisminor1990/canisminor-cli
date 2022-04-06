@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Link, BigText, Gradient } from '@/components';
+import { BigText, Gradient, ChildProcess } from '@/components';
 
 const App: React.FC = () => {
   return (
@@ -7,9 +7,7 @@ const App: React.FC = () => {
       <Gradient name="rainbow">
         <BigText text="canisminor" />
       </Gradient>
-      <Link url="https://sindresorhus.com">
-        My <Text color="cyan">Website</Text>
-      </Link>
+      <ChildProcess command={'yarn'} />
     </>
   );
 };
