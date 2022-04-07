@@ -8,3 +8,9 @@ declare module '*.svg' {
   const url: string;
   export default url;
 }
+
+declare namespace NodeJS {
+  export interface ProcessEnv {
+    CLI_VERSION: string;
+  }
+}

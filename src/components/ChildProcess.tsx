@@ -3,15 +3,12 @@ import childProcess from 'child_process';
 import stripAnsi from 'strip-ansi';
 import { Text, Box } from '@/components';
 
-interface InkChildProcessProps {
+interface Props {
   command: string;
   verboss?: boolean;
 }
 
-const InkChildProcess: React.FC<InkChildProcessProps> = ({
-  command,
-  verboss,
-}) => {
+const ChildProcess: React.FC<Props> = ({ command, verboss }) => {
   const [output, setOutput] = React.useState('');
 
   React.useEffect(() => {
@@ -36,4 +33,4 @@ const InkChildProcess: React.FC<InkChildProcessProps> = ({
   );
 };
 
-export default InkChildProcess;
+export default ChildProcess;

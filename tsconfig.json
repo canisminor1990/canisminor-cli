@@ -6,10 +6,10 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "importsNotUsedAsValues":  "preserve",
+    "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }
-  },
-  "include": ["src"]
+  }
 }

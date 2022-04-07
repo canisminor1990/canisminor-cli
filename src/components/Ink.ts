@@ -7,9 +7,6 @@ export { default as Ascii } from 'ink-ascii';
 // doc: https://github.com/vadimdemedes/ink-big-text
 export { default as BigText } from 'ink-big-text';
 
-// doc: https://github.com/LitoMore/ink-color-pipe
-// export { default as ColorPipe } from 'ink-color-pipe';
-
 // doc: https://github.com/kevva/ink-confirm-input
 // @ts-ignore
 export { default as ConfirmInput } from 'ink-confirm-input';
@@ -39,9 +36,6 @@ export { default as MultiSelect } from 'ink-multi-select';
 // doc: https://github.com/brigand/ink-progress-bar
 // @ts-ignore
 export { default as ProgressBar } from 'ink-progress-bar';
-
-// doc: https://github.com/Eximchain/ink-quicksearch-input
-export { default as QuicksearchInput } from 'ink-quicksearch-input';
 
 // doc: https://github.com/vadimdemedes/ink-select-input
 export { default as SelectInput } from 'ink-select-input';
