@@ -1,6 +1,6 @@
 {
   "name": "@canisminor/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "git@github.com:canisminor1990/canisminor-cli.git",
   "author": "CanisMinor <i@canisminor.cc>",
   "license": "MIT",
@@ -17,7 +17,8 @@
     "lint": "eslint --fix ./src --ext .ts,.tsx,.js --quiet",
     "type-check": "tsc --noEmit",
     "ci": "npm run lint && npm run type-check && npm run build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "publish": "npm run publish --registry https://registry.npmjs.org --access public"
   },
   "files": [
     "dist"

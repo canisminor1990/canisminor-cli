@@ -1,4 +1,4 @@
-const { DefinePlugin } = require('webpack');
+const { DefinePlugin, BannerPlugin } = require('webpack');
 const WebpackBar = require('webpackBar');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -68,6 +68,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new WebpackBar({ name: 'CMLI' }),
+    new BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
     new DefinePlugin({
       'process.env.CLI_VERSION': JSON.stringify(packgeInfo.version),
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
