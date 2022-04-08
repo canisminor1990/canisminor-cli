@@ -65,6 +65,8 @@
   },
   "devDependencies": {
     "@radix-ui/colors": "^0.1.8",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@sindresorhus/tsconfig": "^2.0.0",
     "@types/chalk": "^2.2.0",
     "@types/chroma-js": "^2.1.3",
@@ -90,6 +92,7 @@
     "lint-staged": "^10.0.7",
     "plist": "^3.0.5",
     "prettier": "^2.2.0",
+    "semantic-release": "^19.0.2",
     "ts-loader": "^9.2.8",
     "ts-node": "^10.7.0",
     "tsconfig-paths": "^3.14.1",
