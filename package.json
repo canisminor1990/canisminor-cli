@@ -1,11 +1,13 @@
 {
   "private": true,
-  "name": "canisminor-cli",
+  "name": "@canisminor/cli",
   "version": "1.0.0",
   "repository": "git@github.com:canisminor1990/canisminor-cli.git",
   "author": "CanisMinor <i@canisminor.cc>",
   "license": "MIT",
-  "bin": "dist/index.js",
+  "bin": {
+    "cmli": "dist/index.js"
+  },
   "engines": {
     "node": ">=10"
   },
@@ -20,10 +22,13 @@
     "ci": "npm run lint && npm run type-check"
   },
   "files": [
-    "dist/index.js"
+    "dist"
   ],
   "gitHooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "post-checkout": "yarnhook",
+    "post-merge": "yarnhook",
+    "post-rewrite": "yarnhook"
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
@@ -93,6 +98,7 @@
     "webpack-cli": "^4.9.2",
     "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.2",
+    "yarnhook": "^0.5.1",
     "zustand": "^3.7.1"
   }
 }
