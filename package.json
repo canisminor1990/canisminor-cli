@@ -18,7 +18,7 @@
     "type-check": "tsc --noEmit",
     "ci": "npm run lint && npm run type-check && npm run build",
     "semantic-release": "semantic-release",
-    "publish": "npm run publish --registry https://registry.npmjs.org --access public"
+    "publish": "npm publish --registry https://registry.npmjs.org --access public"
   },
   "files": [
     "dist"
