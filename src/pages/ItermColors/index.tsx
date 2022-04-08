@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Theme,
   Text,
@@ -7,25 +7,28 @@ import {
   TitleBox,
   Log,
   BorderBox,
+  FC,
 } from '@/components';
 import { BOX_WIDTH } from '@/utils/const';
-import { genPlist } from './genPlist';
+import { genItermColorPlist } from './service';
 import { useStore } from '@/store';
 
-const App: React.FC = () => {
+const title = '🌈 iTerm Colors';
+
+const App: FC = () => {
   const { setHistory } = useStore();
   const [path, setPath] = useState<string>('');
 
   const handleSubmit = (result: boolean) => {
     if (!result) return setHistory('/');
-    const filepath = genPlist();
+    const filepath = genItermColorPlist();
     setPath(filepath);
     setTimeout(() => setHistory('/'), 1000);
   };
 
   return (
     <>
-      <TitleBox text="🌈 iTerm Colors"></TitleBox>
+      <TitleBox text={title}></TitleBox>
       <Box width={BOX_WIDTH} justifyContent="center">
         {Object.keys(Theme).map((name) => (
           <Box key={name} marginRight={1}>
@@ -45,5 +48,7 @@ const App: React.FC = () => {
     </>
   );
 };
+
+App.title = title;
 
 export default App;

@@ -1,5 +1,7 @@
-const webpack = require('webpack');
-const WebpackBar = require('webpackbar');
+const { DefinePlugin } = require('webpack');
+const WebpackBar = require('webpackBar');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 const packgeInfo = require('../package.json');
 
@@ -64,11 +66,21 @@ module.exports = {
     ...externalsFromDep(),
   },
   plugins: [
-    new WebpackBar({ name: 'WP' }),
-    new webpack.DefinePlugin({
+    new CleanWebpackPlugin(),
+    new WebpackBar({ name: 'CMLI' }),
+    new DefinePlugin({
       'process.env.CLI_VERSION': JSON.stringify(packgeInfo.version),
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.RELEASE_ENV': JSON.stringify(process.env.RELEASE_ENV),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: resolve('public'),
+          to: './',
+          force: true,
+        },
+      ],
     }),
   ],
 };

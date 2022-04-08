@@ -1,24 +1,19 @@
 import React from 'react';
-import {
-  LogoBox,
-  SelectInput,
-  SelectItem,
-  SelectIndicator,
-} from '@/components';
+import { LogoBox, Select, ItemOfSelect } from '@/components';
 import ItermColors from '@/pages/ItermColors';
+import Fish from '@/pages/Fish';
 import { useStore } from '@/store';
 
-interface Router {
-  label: string;
-  value: string;
-  component?: any;
-}
-
-const router: Router[] = [
+const router: ItemOfSelect[] = [
   {
-    label: '🌈 Iterm Colors',
+    label: ItermColors.title,
     value: '/iterm',
     component: <ItermColors />,
+  },
+  {
+    label: Fish.title,
+    value: '/fish',
+    component: <Fish />,
   },
   {
     label: '👋 Exit',
@@ -30,7 +25,7 @@ const router: Router[] = [
 const App: React.FC = () => {
   const { history, setHistory } = useStore();
 
-  const handleSelect = (item: { value: string }) => {
+  const handleSelect = (item: ItemOfSelect) => {
     setHistory(item.value);
   };
 
@@ -39,12 +34,7 @@ const App: React.FC = () => {
       {history === '/' && (
         <>
           <LogoBox text="canisminor" />
-          <SelectInput
-            items={router}
-            onSelect={handleSelect}
-            itemComponent={SelectItem}
-            indicatorComponent={SelectIndicator}
-          />
+          <Select items={router} onSelect={handleSelect} />
         </>
       )}
       {router.map((item) => (
