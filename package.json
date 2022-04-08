@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "@canisminor/cli",
   "version": "1.0.0",
   "repository": "git@github.com:canisminor1990/canisminor-cli.git",
