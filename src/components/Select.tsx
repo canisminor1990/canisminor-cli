@@ -2,7 +2,7 @@ import React from 'react';
 import { SelectIndicator, SelectInput, SelectItem } from '@/components';
 
 export interface ItemOfSelect {
-  label: string;
+  label?: string;
   value: any;
   key?: string | number | undefined;
   component?: any;
