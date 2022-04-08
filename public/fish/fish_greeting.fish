@@ -40,9 +40,6 @@ function fish_greeting
 	set -l __logo_width 39
 	set -l __logo_padding (math (math $__body_width - $__logo_width) / 2)
 
-	echo $__body_width
-	echo $__logo_padding
-
 	# Logo Row
 	set -l row_top "$set_color_black╭"(__add_spacing "─" $__body_width)"╮$rest_color"
 	set -l row_mid "$set_color_black│"(__add_spacing " " $__body_width)"│$rest_color"
