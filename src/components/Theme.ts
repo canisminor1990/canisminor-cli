@@ -40,6 +40,21 @@ interface Props {
   [key: string]: string;
 }
 
+export const Grey = {
+  step1: chroma(sandDark.sand1).hex(),
+  step2: chroma(sandDark.sand2).hex(),
+  step3: chroma(sandDark.sand3).hex(),
+  step4: chroma(sandDark.sand4).hex(),
+  step5: chroma(sandDark.sand5).hex(),
+  step6: chroma(sandDark.sand6).hex(),
+  step7: chroma(sandDark.sand7).hex(),
+  step8: chroma(sandDark.sand8).hex(),
+  step9: chroma(sandDark.sand9).hex(),
+  step10: chroma(sandDark.sand10).hex(),
+  step11: chroma(sandDark.sand11).hex(),
+  step12: chroma(sandDark.sand12).hex(),
+};
+
 export const BaseColor = {
   // ANSI Colors
   White: chroma(sandDark.sand11).hex(),

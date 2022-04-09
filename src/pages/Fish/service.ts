@@ -4,6 +4,17 @@ import { resolve } from 'path';
 import { BaseColor } from '@/components';
 import { forEach, snakeCase } from 'lodash';
 import { getPath, mkDir, openDir } from '@/utils/path';
+import { omfTheme } from './omp';
+
+export const genOmpTheme = () => {
+  const DIR_NAME = 'oh-my-posh';
+  mkDir(DIR_NAME);
+  const destination = resolve(HOME_DIR, '.oh-my-posh/themes/mytheme.omp.json');
+  const filename = getPath(DIR_NAME, 'mytheme.omp.json');
+  fs.writeFileSync(filename, JSON.stringify(omfTheme, null, 2));
+  fs.writeFileSync(destination, JSON.stringify(omfTheme, null, 2));
+  return destination;
+};
 
 export const copyFishTheme = () => {
   const source = resolve(PATH_DIR, 'fish');
