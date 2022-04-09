@@ -153,10 +153,6 @@ const promptRight: OmpBlock = {
       foreground: '#978365',
       foreground_templates: [
         ompIf(
-          'and (eq .Ahead 0) (eq .Behind 0) (eq .Working.Changed false) (eq .Staging.Changed false)',
-          theme.Black,
-        ),
-        ompIf(
           'and (.Staging.Changed) (eq .Working.Changed false)',
           Theme.BlueBright,
         ),
@@ -164,10 +160,6 @@ const promptRight: OmpBlock = {
       ],
       background: '#3e382c',
       background_templates: [
-        ompIf(
-          'and (eq .Ahead 0) (eq .Behind 0) (eq .Working.Changed false) (eq .Staging.Changed false)',
-          theme.Green,
-        ),
         ompIf('and (.Staging.Changed) (eq .Working.Changed false)', '#083e59'),
         ompIf('and (.Staging.Changed) (.Working.Changed)', '#493c00'),
       ],
@@ -175,10 +167,6 @@ const promptRight: OmpBlock = {
         fetch_status: true,
         template: [
           spacing,
-          ompIf(
-            'and (eq .Ahead 0) (eq .Behind 0) (eq .Working.Changed false) (eq .Staging.Changed false)',
-            '✔' + spacing,
-          ),
           ompIf(
             'and (.Staging.Changed) (eq .Working.Changed false)',
             '' + spacing,
