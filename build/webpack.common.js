@@ -25,6 +25,7 @@ module.exports = {
   target: 'node',
   entry: {
     index: './src/index',
+    'cmli-logo': './src/logo',
   },
   output: {
     filename: '[name].js',

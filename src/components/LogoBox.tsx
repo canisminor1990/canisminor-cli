@@ -4,11 +4,13 @@ import { CLI_VERSION } from '@/utils/const';
 
 interface Props {
   text: string;
+  width?: string | number;
 }
 
-const LogoBox: React.FC<Props> = ({ text }) => {
+const LogoBox: React.FC<Props> = ({ text, width }) => {
   return (
     <BorderBox
+      width={width}
       height={6}
       justifyContent="center"
       alignItems="center"

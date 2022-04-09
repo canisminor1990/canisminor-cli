@@ -3,8 +3,8 @@ import { Box, Theme } from '@/components';
 import { BOX_WIDTH } from '@/utils/const';
 
 interface Props {
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
   paddingLeft?: number;
   paddingRight?: number;
   flexDirection?: 'column' | 'row';

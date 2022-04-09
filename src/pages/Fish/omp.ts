@@ -1,4 +1,5 @@
 import { Theme, Grey } from '@/components';
+import theme from '@/components/Theme';
 
 declare interface OmpBlock {
   type: 'prompt' | 'rprompt';
@@ -37,16 +38,19 @@ const promptLeft: OmpBlock = {
   alignment: 'left',
   segments: [
     {
+      type: 'os',
+      style: 'diamond',
+      leading_diamond: '╭─',
       background: Theme.Black,
       foreground: Theme.White,
-      leading_diamond: '╭─',
       properties: {
         template: ompSegment('.Icon'),
       },
-      style: 'diamond',
-      type: 'os',
     },
     {
+      type: 'path',
+      style: 'powerline',
+      powerline_symbol: '',
       background: Theme.Black,
       foreground: Theme.WhiteBright,
       properties: {
@@ -57,10 +61,12 @@ const promptLeft: OmpBlock = {
         style: 'mixed',
         template: spacing + ompSegment('.Path') + spacing,
       },
-      style: 'powerline',
-      type: 'path',
     },
     {
+      type: 'git',
+      style: 'powerline',
+      powerline_symbol: '',
+      foreground: Theme.Black,
       background: Theme.GreenBright,
       background_templates: [
         ompIf('or (.Working.Changed) (.Staging.Changed)', Theme.Yellow),
@@ -68,8 +74,6 @@ const promptLeft: OmpBlock = {
         ompIf('gt .Ahead 0', Theme.BlueBright),
         ompIf('gt .Behind 0', Theme.BlueBright),
       ],
-      foreground: Theme.Black,
-      powerline_symbol: '',
       properties: {
         branch_icon: ' ',
         fetch_status: true,
@@ -77,107 +81,156 @@ const promptLeft: OmpBlock = {
         template: [
           spacing,
           ompSegment('.HEAD'),
-          ompIf('gt .Ahead 0', '⇡' + ompSegment('.Ahead')),
-          ompIf('gt .Ahead 0', '⇣' + ompSegment('.Behind')),
+          ompIf('or (gt .Ahead 0) (gt .Behind 0)', spacing),
+          ompIf('gt .Ahead 0', '↑' + ompSegment('.Ahead')),
+          ompIf('gt .Behind 0', '↓' + ompSegment('.Behind')),
           spacing,
         ].join(''),
       },
-      style: 'powerline',
-      type: 'git',
     },
   ],
   type: 'prompt',
 };
+
 const promptLeftSecond: OmpBlock = {
   alignment: 'left',
   newline: true,
   segments: [
     {
+      type: 'text',
+      style: 'plain',
       foreground: Theme.Black,
       properties: {
         template: '╰─',
       },
-      style: 'plain',
-      type: 'text',
     },
     {
+      type: 'exit',
+      style: 'plain',
       foreground: Theme.BlueBright,
       foreground_templates: [ompIf('gt .Code 0', Theme.Red)],
       properties: {
         always_enabled: true,
         template: '➤ ',
       },
-      style: 'plain',
-      type: 'exit',
     },
   ],
   type: 'prompt',
 };
+
 const promptRight: OmpBlock = {
   alignment: 'right',
   segments: [
     {
-      background: '#303030',
-      foreground: '#3C873A',
+      type: 'node',
+      style: 'diamond',
       leading_diamond: ' ',
+      trailing_diamond: '',
+      foreground: Theme.Green,
+      background: '#344213',
       properties: {
         fetch_package_manager: true,
-        npm_icon: ' <#cc3a3a></> ',
-        template:
-          ' {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}',
-        yarn_icon: ' <#348cba></>',
+        npm_icon: '',
+        yarn_icon: '',
+        template: [
+          spacing,
+          ompIf(
+            '.PackageManagerIcon',
+            ompSegment('.PackageManagerIcon') + spacing,
+          ),
+          '',
+          spacing,
+          'v' + ompSegment('.Major'),
+          spacing,
+        ].join(''),
       },
-      style: 'diamond',
-      trailing_diamond: '',
-      type: 'node',
     },
     {
-      background: Theme.Black,
-      foreground: Theme.White,
-      invert_powerline: true,
+      type: 'git',
+      style: 'diamond',
       leading_diamond: ' ',
+      trailing_diamond: '',
+      foreground: '#978365',
+      foreground_templates: [
+        ompIf(
+          'and (eq .Ahead 0) (eq .Behind 0) (eq .Working.Changed false) (eq .Staging.Changed false)',
+          theme.Black,
+        ),
+        ompIf(
+          'and (.Staging.Changed) (eq .Working.Changed false)',
+          Theme.BlueBright,
+        ),
+        ompIf('and (.Staging.Changed) (.Working.Changed)', Theme.Yellow),
+      ],
+      background: '#3e382c',
+      background_templates: [
+        ompIf(
+          'and (eq .Ahead 0) (eq .Behind 0) (eq .Working.Changed false) (eq .Staging.Changed false)',
+          theme.Green,
+        ),
+        ompIf('and (.Staging.Changed) (eq .Working.Changed false)', '#083e59'),
+        ompIf('and (.Staging.Changed) (.Working.Changed)', '#493c00'),
+      ],
       properties: {
-        fetch_stash_count: true,
         fetch_status: true,
-        fetch_upstream_icon: true,
-        fetch_worktree_count: true,
         template: [
           spacing,
           ompIf(
             'and (eq .Ahead 0) (eq .Behind 0) (eq .Working.Changed false) (eq .Staging.Changed false)',
-            ompIcon('✔' + spacing, Theme.GreenBright),
+            '✔' + spacing,
           ),
           ompIf(
-            '.Staging.Changed',
-            ompIcon(
-              '±' +
-                ompSegment('.Staging.Modified') +
-                '+' +
-                ompSegment('.Staging.Added') +
-                '-' +
-                ompSegment('.Staging.Deleted') +
-                '※' +
-                ompSegment('.Staging.Unmerged') +
-                spacing,
-              Theme.BlueBright,
-            ),
+            'and (.Staging.Changed) (eq .Working.Changed false)',
+            '' + spacing,
+          ),
+          ompIf('and (.Staging.Changed) (.Working.Changed)', '﬚' + spacing),
+          ompIf(
+            'gt .Working.Modified 0',
+
+            '±' + ompSegment('.Working.Modified') + spacing,
           ),
           ompIf(
-            'gt .StashCount 0',
-            ompIcon(
-              '±' + ompSegment('.StashCount') + spacing,
-              Theme.OrangeBright,
-            ),
+            'gt .Working.Added 0',
+            '+' + ompSegment('.Working.Added') + spacing,
           ),
           ompIf(
-            '.Working.Changed',
-            ompIcon(ompSegment('.Working.String') + spacing, Theme.White),
+            'gt .Working.Deleted 0',
+            '-' + ompSegment('.Working.Deleted') + spacing,
+          ),
+          ompIf(
+            'gt .Working.Unmerged 0',
+            '' + ompSegment('.Working.Unmerged') + spacing,
           ),
         ].join(''),
       },
+    },
+    {
+      type: 'project',
       style: 'diamond',
+      leading_diamond: ' ',
       trailing_diamond: '',
-      type: 'git',
+      foreground: Theme.White,
+      background: Grey.step9,
+      properties: {
+        template: [
+          spacing,
+          '',
+          spacing,
+          ompSegment('.Name') + '@' + ompSegment('.Version') + spacing,
+        ].join(''),
+      },
+    },
+    {
+      type: 'time',
+      style: 'diamond',
+      leading_diamond: ' ',
+      trailing_diamond: '',
+      background: Theme.Black,
+      foreground: Theme.White,
+      properties: {
+        time_format: '15:04:05',
+        template: spacing + ompSegment('.CurrentDate | date .Format') + spacing,
+      },
     },
   ],
   type: 'prompt',

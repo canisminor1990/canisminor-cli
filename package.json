@@ -5,7 +5,8 @@
   "author": "CanisMinor <i@canisminor.cc>",
   "license": "MIT",
   "bin": {
-    "cmli": "dist/index.js"
+    "cmli": "dist/index.js",
+    "cmli-logo": "dist/logo.js"
   },
   "engines": {
     "node": ">=10"
