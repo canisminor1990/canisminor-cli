@@ -28,7 +28,7 @@ export { default as Image } from 'ink-image';
 export { default as Link } from 'ink-link';
 
 // doc: https://github.com/cameronhunter/ink-markdown
-export { default as Markdown } from 'ink-markdown';
+// export { default as Markdown } from 'ink-markdown';
 
 // doc:https://github.com/karaggeorge/ink-multi-select
 export { default as MultiSelect } from 'ink-multi-select';
