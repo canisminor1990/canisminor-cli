@@ -27,9 +27,6 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Test
-        run: yarn ci
-
       - name: Merge
         uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
