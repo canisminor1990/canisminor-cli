@@ -4,17 +4,17 @@ function _canisminor_color
  set -g white                            A1A09A
  set -g white_bright                     EDEDEC
  set -g black                            353431
- set -g black_bright                     717069
- set -g red                              E93D82
- set -g red_bright                       F04F88
+ set -g black_bright                     51504B
+ set -g red                              E5484D
+ set -g red_bright                       FF6369
  set -g orange                           FFB224
- set -g orange_bright                    F1A10D
+ set -g orange_bright                    FFCB47
  set -g yellow                           F5D90A
  set -g yellow_bright                    FFEF5C
  set -g green                            99D52A
  set -g green_bright                     C4F042
  set -g cyan                             68DDFD
- set -g cyan_bright                      2EC8EE
+ set -g cyan_bright                      8AE8FF
  set -g blue                             0091FF
  set -g blue_bright                      52A9FF
  set -g magenta                          AB4ABA

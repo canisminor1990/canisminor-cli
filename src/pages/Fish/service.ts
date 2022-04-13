@@ -3,17 +3,22 @@ import fs from 'fs-extra';
 import { resolve } from 'path';
 import { BaseColor } from '@/components';
 import { forEach, snakeCase } from 'lodash';
-import { getPath, mkDir, openDir } from '@/utils/path';
+import { getPath, mkDir } from '@/utils/path';
 import { omfTheme } from './omp';
+import childProcess from 'child_process';
 
 export const genOmpTheme = () => {
-  const DIR_NAME = 'oh-my-posh';
+  const DIR_NAME = 'omp';
   mkDir(DIR_NAME);
-  const destination = resolve(HOME_DIR, '.oh-my-posh/themes/mytheme.omp.json');
   const filename = getPath(DIR_NAME, 'mytheme.omp.json');
   fs.writeFileSync(filename, JSON.stringify(omfTheme, null, 2));
-  fs.writeFileSync(destination, JSON.stringify(omfTheme, null, 2));
-  return destination;
+  return filename;
+};
+
+export const ompInitFish = () => {
+  childProcess.exec(
+    "echo 'oh-my-posh init fish --config ~/.cmli/omp/mytheme.omp.json | source' >> ~/.config/fish/config.fish",
+  );
 };
 
 export const copyFishTheme = () => {
@@ -58,6 +63,5 @@ export const genFishColor = (): string => {
   mkDir(DIR_NAME);
   const filename = getPath(DIR_NAME, '_canisminor_color.fish');
   fs.writeFileSync(filename, data.join('\n'));
-  openDir(DIR_NAME);
   return filename;
 };

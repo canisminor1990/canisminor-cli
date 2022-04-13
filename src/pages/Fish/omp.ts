@@ -1,5 +1,13 @@
-import { Theme, Grey } from '@/components';
-import theme from '@/components/Theme';
+import {
+  goldDark,
+  sandDark,
+  limeDark,
+  yellowDark,
+  skyDark,
+  redDark,
+  blueDark,
+} from '@radix-ui/colors';
+import chroma from 'chroma-js';
 
 declare interface OmpBlock {
   type: 'prompt' | 'rprompt';
@@ -40,9 +48,9 @@ const promptLeft: OmpBlock = {
     {
       type: 'os',
       style: 'diamond',
-      leading_diamond: '╭─',
-      background: Theme.Black,
-      foreground: Theme.White,
+      leading_diamond: ompIcon('╭─', chroma(sandDark.sand7).hex()) + '',
+      background: chroma(sandDark.sand6).hex(),
+      foreground: chroma(sandDark.sand11).hex(),
       properties: {
         template: ompSegment('.Icon'),
       },
@@ -51,12 +59,11 @@ const promptLeft: OmpBlock = {
       type: 'path',
       style: 'powerline',
       powerline_symbol: '',
-      background: Theme.Black,
-      foreground: Theme.WhiteBright,
+      background: chroma(sandDark.sand6).hex(),
+      foreground: chroma(sandDark.sand12).hex(),
       properties: {
-        home_icon: ompIcon('~', Theme.White),
-        folder_icon: ompIcon('..', Theme.White),
-        folder_separator_icon: ompIcon('/', Grey.step9),
+        folder_icon: ompIcon('..', chroma(sandDark.sand11).hex()),
+        folder_separator_icon: ompIcon('/', chroma(sandDark.sand11).hex()),
         mixed_threshold: 12,
         style: 'mixed',
         template: spacing + ompSegment('.Path') + spacing,
@@ -66,13 +73,25 @@ const promptLeft: OmpBlock = {
       type: 'git',
       style: 'powerline',
       powerline_symbol: '',
-      foreground: Theme.Black,
-      background: Theme.GreenBright,
+      foreground: chroma(skyDark.sky1).hex(),
+      background: chroma(skyDark.sky9).hex(),
+      foreground_templates: [
+        ompIf(
+          'or (.Working.Changed) (.Staging.Changed)',
+          chroma(yellowDark.yellow1).hex(),
+        ),
+        ompIf('and (gt .Ahead 0) (gt .Behind 0)', chroma(limeDark.lime1).hex()),
+        ompIf('gt .Ahead 0', chroma(skyDark.sky1).hex()),
+        ompIf('gt .Behind 0', chroma(skyDark.sky1).hex()),
+      ],
       background_templates: [
-        ompIf('or (.Working.Changed) (.Staging.Changed)', Theme.Yellow),
-        ompIf('and (gt .Ahead 0) (gt .Behind 0)', Theme.GreenBright),
-        ompIf('gt .Ahead 0', Theme.BlueBright),
-        ompIf('gt .Behind 0', Theme.BlueBright),
+        ompIf(
+          'or (.Working.Changed) (.Staging.Changed)',
+          chroma(yellowDark.yellow9).hex(),
+        ),
+        ompIf('and (gt .Ahead 0) (gt .Behind 0)', chroma(limeDark.lime9).hex()),
+        ompIf('gt .Ahead 0', chroma(skyDark.sky9).hex()),
+        ompIf('gt .Behind 0', chroma(skyDark.sky9).hex()),
       ],
       properties: {
         branch_icon: ' ',
@@ -99,7 +118,7 @@ const promptLeftSecond: OmpBlock = {
     {
       type: 'text',
       style: 'plain',
-      foreground: Theme.Black,
+      foreground: chroma(sandDark.sand7).hex(),
       properties: {
         template: '╰─',
       },
@@ -107,8 +126,8 @@ const promptLeftSecond: OmpBlock = {
     {
       type: 'exit',
       style: 'plain',
-      foreground: Theme.BlueBright,
-      foreground_templates: [ompIf('gt .Code 0', Theme.Red)],
+      foreground: chroma(blueDark.blue11).hex(),
+      foreground_templates: [ompIf('gt .Code 0', chroma(redDark.red9).hex())],
       properties: {
         always_enabled: true,
         template: '➤ ',
@@ -122,46 +141,31 @@ const promptRight: OmpBlock = {
   alignment: 'right',
   segments: [
     {
-      type: 'node',
-      style: 'diamond',
-      leading_diamond: ' ',
-      trailing_diamond: '',
-      foreground: Theme.Green,
-      background: '#344213',
-      properties: {
-        fetch_package_manager: true,
-        npm_icon: '',
-        yarn_icon: '',
-        template: [
-          spacing,
-          ompIf(
-            '.PackageManagerIcon',
-            ompSegment('.PackageManagerIcon') + spacing,
-          ),
-          '',
-          spacing,
-          'v' + ompSegment('.Major'),
-          spacing,
-        ].join(''),
-      },
-    },
-    {
       type: 'git',
       style: 'diamond',
       leading_diamond: ' ',
       trailing_diamond: '',
-      foreground: '#978365',
+      foreground: chroma(goldDark.gold11).hex(),
+      background: chroma(goldDark.gold6).hex(),
       foreground_templates: [
         ompIf(
           'and (.Staging.Changed) (eq .Working.Changed false)',
-          Theme.BlueBright,
+          chroma(skyDark.sky11).hex(),
         ),
-        ompIf('and (.Staging.Changed) (.Working.Changed)', Theme.Yellow),
+        ompIf(
+          'and (.Staging.Changed) (.Working.Changed)',
+          chroma(yellowDark.yellow11).hex(),
+        ),
       ],
-      background: '#3e382c',
       background_templates: [
-        ompIf('and (.Staging.Changed) (eq .Working.Changed false)', '#083e59'),
-        ompIf('and (.Staging.Changed) (.Working.Changed)', '#493c00'),
+        ompIf(
+          'and (.Staging.Changed) (eq .Working.Changed false)',
+          chroma(skyDark.sky6).hex(),
+        ),
+        ompIf(
+          'and (.Staging.Changed) (.Working.Changed)',
+          chroma(yellowDark.yellow6).hex(),
+        ),
       ],
       properties: {
         fetch_status: true,
@@ -197,8 +201,8 @@ const promptRight: OmpBlock = {
       style: 'diamond',
       leading_diamond: ' ',
       trailing_diamond: '',
-      foreground: Theme.White,
-      background: Grey.step9,
+      foreground: chroma(sandDark.sand11).hex(),
+      background: chroma(sandDark.sand6).hex(),
       properties: {
         template: [
           spacing,
@@ -206,18 +210,6 @@ const promptRight: OmpBlock = {
           spacing,
           ompSegment('.Name') + '@' + ompSegment('.Version') + spacing,
         ].join(''),
-      },
-    },
-    {
-      type: 'time',
-      style: 'diamond',
-      leading_diamond: ' ',
-      trailing_diamond: '',
-      background: Theme.Black,
-      foreground: Theme.White,
-      properties: {
-        time_format: '15:04:05',
-        template: spacing + ompSegment('.CurrentDate | date .Format') + spacing,
       },
     },
   ],

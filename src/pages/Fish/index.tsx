@@ -10,7 +10,12 @@ import {
   Theme,
 } from '@/components';
 import { useStore } from '@/store';
-import { copyFishTheme, genFishColor, genOmpTheme } from './service';
+import {
+  copyFishTheme,
+  genFishColor,
+  genOmpTheme,
+  ompInitFish,
+} from './service';
 
 const title = '🐟 Fish Shell';
 
@@ -26,6 +31,10 @@ const items: ItemOfSelect[] = [
   {
     label: 'Install oh-my-posh theme',
     value: 3,
+  },
+  {
+    label: 'Setup oh-my-posh init fish',
+    value: 4,
   },
   {
     label: 'Back',
@@ -54,6 +63,11 @@ const App: FC = () => {
     if (item.value === 3) {
       const output = genOmpTheme();
       setMsg(<Log type="success" text={`Output: ${output}`} />);
+      return;
+    }
+    if (item.value === 4) {
+      ompInitFish();
+      setMsg(<Log type="success" text="Setup success!" />);
       return;
     }
   };
