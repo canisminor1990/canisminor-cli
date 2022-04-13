@@ -1,6 +1,6 @@
 {
   "name": "@canisminor/cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI tools for canisminor",
   "repository": {
     "type": "git",
