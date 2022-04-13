@@ -26,6 +26,7 @@
   ],
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
       "post-checkout": "yarnhook",
       "post-merge": "yarnhook",
@@ -93,6 +94,8 @@
     "cache-loader": "^4.1.0",
     "chroma-js": "^2.4.2",
     "clean-webpack-plugin": "^4.0.0",
+    "commitlint": "^16.2.3",
+    "commitlint-config-gitmoji": "^2.2.5",
     "copy-webpack-plugin": "^10.2.4",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
