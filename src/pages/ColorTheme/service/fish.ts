@@ -6,20 +6,6 @@ import { forEach, snakeCase } from 'lodash';
 import { getPath } from '@/utils/path';
 import { Service } from './index';
 
-export const copyFishTheme: Service = (log) => {
-  log('installing....');
-  const source = resolve(PATH_DIR, 'fish');
-  const destination = resolve(HOME_DIR, '.config/fish/functions');
-  const isExist = fs.pathExistsSync(destination);
-  if (isExist) fs.removeSync(destination);
-  fs.copySync(source, destination);
-  log('from: ' + source);
-  log('to: ' + destination);
-  log('generate fish color...');
-  genFishColor(log);
-  log('install fish theme success!');
-};
-
 const formatString = (text: string, length: number) => {
   return (text + Array(length).join(' ')).slice(0, length);
 };
@@ -57,4 +43,18 @@ const genFishColor: Service = (log) => {
   );
   fs.writeFileSync(filename, data.join('\n'));
   log('output: ' + filename);
+};
+
+export const copyFishTheme: Service = (log) => {
+  log('installing....');
+  const source = resolve(PATH_DIR, 'fish');
+  const destination = resolve(HOME_DIR, '.config/fish/functions');
+  const isExist = fs.pathExistsSync(destination);
+  if (isExist) fs.removeSync(destination);
+  fs.copySync(source, destination);
+  log('from: ' + source);
+  log('to: ' + destination);
+  log('generate fish color...');
+  genFishColor(log);
+  log('install fish theme success!');
 };

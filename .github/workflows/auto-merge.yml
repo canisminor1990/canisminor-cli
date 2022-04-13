@@ -35,4 +35,4 @@ jobs:
         with:
           command: merge
           target: minor
-          github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
