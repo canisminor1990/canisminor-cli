@@ -3,6 +3,7 @@ import plist from 'plist';
 import chroma from 'chroma-js';
 import { Theme } from '@/components';
 import { mkDir, getPath, openDir } from '@/utils/path';
+import { Service } from './index';
 
 const genColorData = (color: string) => {
   const rgb = chroma(color).rgba();
@@ -15,7 +16,7 @@ const genColorData = (color: string) => {
   };
 };
 
-export const genItermColorPlist = (): string => {
+export const genItermColorPlist: Service = (log) => {
   const data = {
     'Ansi 0 Color': genColorData(Theme.Black),
     'Ansi 1 Color': genColorData(Theme.Red),
@@ -49,5 +50,6 @@ export const genItermColorPlist = (): string => {
   const filename = getPath(DIR_NAME, 'canisminor.itermcolors');
   fs.writeFileSync(filename, plist.build(data));
   openDir(DIR_NAME);
-  return filename;
+  log('output: ' + DIR_NAME);
+  log('generate item theme success!');
 };

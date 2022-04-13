@@ -10,7 +10,7 @@ interface Props {
 const Log: React.FC<Props> = ({ text, type = 'normal', color }) => {
   const data = {
     normal: {
-      icon: '➤',
+      icon: '●',
       color: Theme.BlueBright,
     },
     success: {

@@ -1,8 +1,8 @@
 {
   "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
-    "jsx": "react-jsx",
+    "module": "CommonJS",
+    "jsx": "react",
     "esModuleInterop": true,
     "outDir": "dist",
     "importsNotUsedAsValues":  "preserve",
@@ -11,5 +11,6 @@
     "paths": {
       "@/*": ["src/*"]
     }
-  }
+  },
+  "include": ["src","public"]
 }

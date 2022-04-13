@@ -1,19 +1,13 @@
 import React from 'react';
 import { LogoBox, Select, ItemOfSelect } from '@/components';
-import ItermColors from '@/pages/ItermColors';
-import Fish from '@/pages/Fish';
+import ColorTheme from '@/pages/ColorTheme';
 import { useStore } from '@/store';
 
 const router: ItemOfSelect[] = [
   {
-    label: ItermColors.title,
-    value: '/iterm',
-    component: <ItermColors />,
-  },
-  {
-    label: Fish.title,
-    value: '/fish',
-    component: <Fish />,
+    label: ColorTheme.title,
+    value: '/color-theme',
+    component: <ColorTheme />,
   },
   {
     label: '👋 Exit',

@@ -25,13 +25,12 @@ module.exports = {
   target: 'node',
   entry: {
     index: './src/index',
-    'cmli-logo': './src/logo',
   },
   output: {
     filename: '[name].js',
     path: resolve('dist'),
     library: {
-      type: 'commonjs',
+      type: 'commonjs2',
     },
   },
   resolve: {
@@ -69,7 +68,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new WebpackBar({ name: 'CMLI' }),
-    new BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
+    new BannerPlugin({
+      banner: '#!/usr/bin/env node',
+      raw: true,
+    }),
     new DefinePlugin({
       'process.env.CLI_VERSION': JSON.stringify(packgeInfo.version),
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
