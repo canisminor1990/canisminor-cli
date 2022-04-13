@@ -1,7 +1,15 @@
 {
   "name": "@canisminor/cli",
   "version": "1.0.2",
-  "repository": "git@github.com:canisminor1990/canisminor-cli.git",
+  "description": "CLI tools for canisminor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canisminor1990/canisminor-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/canisminor1990/canisminor-cli/issues"
+  },
+  "homepage": "https://github.com/canisminor1990/canisminor-cli#readme",
   "author": "CanisMinor <i@canisminor.cc>",
   "license": "MIT",
   "bin": {
@@ -9,7 +17,7 @@
     "cmli-logo": "dist/logo.js"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "scripts": {
     "start": "node ./dist/index.js",
@@ -29,18 +37,15 @@
     "---------   ": "",
     "clean": "rm -rf dist",
     "postinstall": "yarn build",
-    "reinstall": "yarn clean && rm -rf node_modules && yarn",
-    "bump:stable": "yarn version apply --all",
-    "bump:next": "yarn version apply --all --prerelease",
-    "bump:check": "yarn version check"
+    "reinstall": "yarn clean && rm -rf node_modules && yarn"
   },
   "files": [
     "dist"
   ],
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
       "post-checkout": "yarnhook",
       "post-merge": "yarnhook",
       "post-rewrite": "yarnhook"
@@ -124,6 +129,7 @@
     "plist": "^3.0.5",
     "prettier": "^2.2.0",
     "semantic-release": "^19.0.2",
+    "semantic-release-config-gitmoji": "^1.2.4",
     "ts-loader": "^9.2.8",
     "ts-node": "^10.7.0",
     "tsconfig-paths": "^3.14.1",
@@ -134,5 +140,9 @@
     "webpackbar": "^5.0.2",
     "yarnhook": "^0.5.1",
     "zustand": "^3.7.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

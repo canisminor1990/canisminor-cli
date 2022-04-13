@@ -1,0 +1,11 @@
+/scripts
+/config
+/example
+_test_
+__test__
+
+/node_modules
+jest*
+/es
+/lib
+/docs
