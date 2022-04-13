@@ -76,7 +76,7 @@
     "ink-text-input": "^4.0.3",
     "ink-use-stdout-dimensions": "^1.0.5",
     "meow": "^10.1.2",
-    "react": "^17.0.2"
+    "react": "^18.0.0"
   },
   "devDependencies": {
     "@radix-ui/colors": "^0.1.8",
