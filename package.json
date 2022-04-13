@@ -19,7 +19,7 @@
     "ci": "npm run lint",
     "---------  ": "",
     "prepublishOnly": "npm run build",
-    "release": "multi-semantic-release",
+    "release": "semantic-release",
     "---------    ": "",
     "lint": "eslint --cache --quiet ./src --ext .ts,.tsx,.js --format=pretty && yarn type-check",
     "lint:fix": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx --format=pretty",
