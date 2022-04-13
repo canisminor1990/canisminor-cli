@@ -29,7 +29,11 @@
     "---------   ": "",
     "clean": "rm -rf dist",
     "postinstall": "yarn build",
-    "reinstall": "yarn clean && rm -rf node_modules && yarn"
+    "reinstall": "yarn clean && rm -rf node_modules && yarn",
+    "---------   ": "",
+    "bump:stable": "yarn version apply --all",
+    "bump:next": "yarn version apply --all --prerelease",
+    "bump:check": "yarn version check"
   },
   "files": [
     "dist"
