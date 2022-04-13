@@ -1,5 +1,17 @@
 # Changelog
 
+# [1.1.0](https://github.com/canisminor1990/canisminor-cli/compare/v1.0.3...v1.1.0) (2022-04-13)
+
+
+### ✨ Features
+
+* add opm init fish ([9665d29](https://github.com/canisminor1990/canisminor-cli/commit/9665d29))
+
+
+### 🐛 Bug Fixes
+
+* workflow ([c911def](https://github.com/canisminor1990/canisminor-cli/commit/c911def))
+
 ## [1.0.3](https://github.com/canisminor1990/canisminor-cli/compare/v1.0.2...v1.0.3) (2022-04-13)
 
 
