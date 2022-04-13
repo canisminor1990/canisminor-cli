@@ -1,5 +1,5 @@
 const { DefinePlugin, BannerPlugin } = require('webpack');
-const WebpackBar = require('webpackBar');
+const WebpackBar = require('webpackbar');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');

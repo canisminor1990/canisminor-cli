@@ -13,8 +13,8 @@
   },
   "scripts": {
     "start": "node ./dist/index.js",
-    "dev": "webpack-cli --config ./build/webpack.common.js --watch",
-    "build": "webpack-cli --config ./build/webpack.prod.js && chmod +x dist/index.js",
+    "dev": "webpack-cli --config ./config/webpack.common.js --watch",
+    "build": "webpack-cli --config ./config/webpack.prod.js && chmod +x dist/index.js",
     "---------": "",
     "ci": "npm run lint",
     "---------  ": "",
