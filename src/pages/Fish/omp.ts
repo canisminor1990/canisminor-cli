@@ -73,25 +73,23 @@ const promptLeft: OmpBlock = {
       type: 'git',
       style: 'powerline',
       powerline_symbol: '',
-      foreground: chroma(skyDark.sky1).hex(),
-      background: chroma(skyDark.sky9).hex(),
+      foreground: chroma(limeDark.lime1).hex(),
+      background: chroma(limeDark.lime9).hex(),
       foreground_templates: [
         ompIf(
           'or (.Working.Changed) (.Staging.Changed)',
           chroma(yellowDark.yellow1).hex(),
         ),
-        ompIf('and (gt .Ahead 0) (gt .Behind 0)', chroma(limeDark.lime1).hex()),
-        ompIf('gt .Ahead 0', chroma(skyDark.sky1).hex()),
-        ompIf('gt .Behind 0', chroma(skyDark.sky1).hex()),
+        ompIf('and (eq .Ahead 0) (eq .Behind 0)', chroma(limeDark.lime1).hex()),
+        ompIf('or (gt .Ahead 0) (gt .Behind 0)', chroma(skyDark.sky1).hex()),
       ],
       background_templates: [
         ompIf(
           'or (.Working.Changed) (.Staging.Changed)',
           chroma(yellowDark.yellow9).hex(),
         ),
-        ompIf('and (gt .Ahead 0) (gt .Behind 0)', chroma(limeDark.lime9).hex()),
-        ompIf('gt .Ahead 0', chroma(skyDark.sky9).hex()),
-        ompIf('gt .Behind 0', chroma(skyDark.sky9).hex()),
+        ompIf('and (eq .Ahead 0) (eq .Behind 0)', chroma(limeDark.lime9).hex()),
+        ompIf('or (gt .Ahead 0) (gt .Behind 0)', chroma(skyDark.sky9).hex()),
       ],
       properties: {
         branch_icon: ' ',
