@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Box, Theme } from '@/components';
 import { BOX_WIDTH } from '@/utils/const';
 
@@ -15,6 +15,7 @@ interface Props {
     | 'center'
     | 'space-around'
     | 'space-between';
+  children?: ReactNode;
 }
 
 const BorderBox: React.FC<Props> = ({
