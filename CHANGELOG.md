@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/canisminor1990/canisminor-cli/compare/v1.1.0...v1.1.1) (2022-04-13)
+
+
+### 🐛 Bug Fixes
+
+* workflow ([4b1e277](https://github.com/canisminor1990/canisminor-cli/commit/4b1e277))
+
 # [1.1.0](https://github.com/canisminor1990/canisminor-cli/compare/v1.0.3...v1.1.0) (2022-04-13)
 
 
