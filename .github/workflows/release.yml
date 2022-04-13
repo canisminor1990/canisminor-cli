@@ -1,4 +1,4 @@
-name: Release
+name: Release CI
 on:
   push:
     branches:
@@ -7,31 +7,41 @@ on:
 jobs:
   test:
     name: Test
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '14'
+
       - uses: c-hive/gha-yarn-cache@v1
 
-      - name: install
+      - name: Install
         run: yarn
 
       - name: Test
-        run: yarn test
+        run: yarn ci
 
   release:
-    needs: test
+    needs: Test
     name: Release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '14'
+
       - uses: c-hive/gha-yarn-cache@v1
 
-      - name: install
+      - name: Install
         run: yarn
 
-      - name: release
+      - name: Release
         run: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

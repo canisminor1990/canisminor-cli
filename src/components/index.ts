@@ -2,7 +2,7 @@ import React from 'react';
 
 export * from './Ink';
 export { default as ChildProcess } from './ChildProcess';
-export { default as Theme, BaseColor, Grey } from './Theme';
+export { default as Theme, BaseColor } from './Theme';
 export { default as Log } from './Log';
 export { default as ConfirmBox } from './ConfirmBox';
 export { default as BorderBox } from './BorderBox';

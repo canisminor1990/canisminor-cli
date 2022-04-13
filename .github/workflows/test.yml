@@ -1,9 +1,9 @@
-name: CI
+name: Test CI
 on: [push, pull_request]
 
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -15,10 +15,10 @@ jobs:
 
       - uses: c-hive/gha-yarn-cache@v1
 
-      - name: install
+      - name: Install
         run: yarn
 
-      - name: ci
+      - name: Test
         run: yarn ci
 
       - name: Generate coverage
