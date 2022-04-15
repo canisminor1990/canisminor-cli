@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/canisminor1990/canisminor-cli/compare/v1.1.2...v1.1.3) (2022-04-15)
+
+
+### 💄 Styles
+
+* update select menu ([216e107](https://github.com/canisminor1990/canisminor-cli/commit/216e107))
+
 ## [1.1.2](https://github.com/canisminor1990/canisminor-cli/compare/v1.1.1...v1.1.2) (2022-04-13)
 
 
