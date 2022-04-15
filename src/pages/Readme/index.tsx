@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FC, TitleBox, MultiSelect, BorderBox, Text } from '@/components';
+import { FC, TitleBox, MultiSelect, Divider, Text } from '@/components';
 import { shieldSelections, genShield } from './service/shield';
 import { genReadme } from './service/template';
 import { PATH_PROCESS } from '@/utils/const';
@@ -22,9 +22,10 @@ const App: FC = () => {
       <TitleBox text={title}></TitleBox>
       <MultiSelect items={shieldSelections} onSubmit={handleSubmit} />
       {log && (
-        <BorderBox>
+        <>
+          <Divider title="README.md" />
           <Text>{log}</Text>
-        </BorderBox>
+        </>
       )}
     </>
   );
