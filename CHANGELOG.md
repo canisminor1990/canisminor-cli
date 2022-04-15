@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.2.0](https://github.com/canisminor1990/canisminor-cli/compare/v1.1.3...v1.2.0) (2022-04-15)
+
+
+### ✨ Features
+
+* [WIP] add README generator ([be4e0c2](https://github.com/canisminor1990/canisminor-cli/commit/be4e0c2))
+
 ## [1.1.3](https://github.com/canisminor1990/canisminor-cli/compare/v1.1.2...v1.1.3) (2022-04-15)
 
 
