@@ -1,13 +1,19 @@
 import React from 'react';
 import { LogoBox, Select, ItemOfSelect } from '@/components';
-import ColorTheme from '@/pages/ColorTheme';
 import { useStore } from '@/store';
+import ColorTheme from '@/pages/ColorTheme';
+import Readme from '@/pages/Readme';
 
 const router: ItemOfSelect[] = [
   {
     label: ColorTheme.title,
     value: '/color-theme',
     component: <ColorTheme />,
+  },
+  {
+    label: Readme.title,
+    value: '/readme',
+    component: <Readme />,
   },
   {
     label: '👋 Exit',

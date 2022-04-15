@@ -3,7 +3,13 @@ function fish_greeting
   fish_color
 
 	# Logo Row
-	cmli --logo canisminor
+	set __greeting_title "canisminor"
+	if test $greeting_title
+		set __greeting_title $greeting_title
+	end
+
+	clear
+	cmli --logo $__greeting_title
 
 	# Info Row
 	set -l __user $set_color_blue_bright(whoami)'@'(hostname)

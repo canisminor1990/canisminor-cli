@@ -15,6 +15,10 @@ const cli = meow(
 
 	Options
 		--logo  Logo text
+		
+	Config
+	  # change the greeting title
+	  $ set -u greeting_title "text"
 `,
   {
     flags: {

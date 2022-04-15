@@ -11,6 +11,7 @@ import { useStore } from '@/store';
 import { copyFishTheme } from './service/fish';
 import { genOmpTheme } from './service/omp';
 import { genItermColorPlist } from './service/iterm';
+import { installGitmojiTheme } from './service/gitmoji';
 import { open } from '@/utils/open';
 
 const title = '🌈 Terminal theme';
@@ -37,6 +38,11 @@ const items: ItemOfSelect[] = [
     url: 'https://ohmyposh.dev/docs',
   },
   {
+    label: '[All] Install logo-ls',
+    value: 5,
+    url: 'https://github.com/Yash-Handa/logo-ls#macos-darwin',
+  },
+  {
     label: '[Mac] Install fish theme and func',
     value: 11,
     service: copyFishTheme,
@@ -50,6 +56,11 @@ const items: ItemOfSelect[] = [
     label: '[Mac] Generate iterm theme',
     value: 13,
     service: genItermColorPlist,
+  },
+  {
+    label: '[All] Install gitmoji theme',
+    value: 14,
+    service: installGitmojiTheme,
   },
   {
     label: 'Back',
