@@ -1,11 +1,14 @@
 import React from 'react';
 import { SelectIndicator, SelectInput, SelectItem } from '@/components';
+import { Service } from '@/pages/ColorTheme/service';
 
 export interface ItemOfSelect {
   label?: string;
   value: any;
   key?: string | number | undefined;
   component?: any;
+  url?: string;
+  service?: Service;
 }
 
 interface Props<T extends ItemOfSelect = ItemOfSelect> {

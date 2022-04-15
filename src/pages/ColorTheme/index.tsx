@@ -11,21 +11,45 @@ import { useStore } from '@/store';
 import { copyFishTheme } from './service/fish';
 import { genOmpTheme } from './service/omp';
 import { genItermColorPlist } from './service/iterm';
+import { open } from '@/utils/open';
 
 const title = '🌈 Terminal theme';
 
 const items: ItemOfSelect[] = [
   {
-    label: 'Install fish theme and func',
+    label: '[All] Install hack nerd font',
     value: 1,
+    url: 'https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip',
   },
   {
-    label: 'Install oh-my-posh theme',
+    label: '[Mac] Install fish shell',
     value: 2,
+    url: 'https://fishshell.com/',
   },
   {
-    label: 'Generate iterm theme',
+    label: '[Win] Install windows terminal',
     value: 3,
+    url: 'https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab',
+  },
+  {
+    label: '[All] Install oh-my-posh',
+    value: 4,
+    url: 'https://ohmyposh.dev/docs',
+  },
+  {
+    label: '[Mac] Install fish theme and func',
+    value: 11,
+    service: copyFishTheme,
+  },
+  {
+    label: '[All] Install oh-my-posh theme',
+    value: 12,
+    service: genOmpTheme,
+  },
+  {
+    label: '[Mac] Generate iterm theme',
+    value: 13,
+    service: genItermColorPlist,
   },
   {
     label: 'Back',
@@ -39,14 +63,13 @@ const App: FC = () => {
 
   const handleSelect = (item: ItemOfSelect) => {
     if (item.value === 0) return setHistory('/');
-    if (item.value === 1) return copyFishTheme(setMsg);
-    if (item.value === 2) return genOmpTheme(setMsg);
-    if (item.value === 3) return genItermColorPlist(setMsg);
+    if (item.url) return open(item.url);
+    if (item.service) return item.service(setMsg);
   };
 
   return (
     <>
-      <TitleBox text="🐟 Fish Shell"></TitleBox>
+      <TitleBox text={title}></TitleBox>
       <Select items={items} onSelect={handleSelect} />
       <BorderBox>
         <Log text={msg} />

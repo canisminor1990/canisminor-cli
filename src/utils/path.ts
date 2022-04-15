@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import { CLI_DIR } from '@/utils/const';
-import childProcess from 'child_process';
+import { open } from './open';
 
 export const mkRootDir = () => {
   const isExist = fs.pathExistsSync(CLI_DIR);
@@ -20,5 +20,5 @@ export const mkDir = (name: string) => {
 };
 
 export const openDir = (name: string) => {
-  childProcess.execSync(`open ${getPath(name)}`);
+  open(getPath(name));
 };
