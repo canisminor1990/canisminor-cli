@@ -29,4 +29,4 @@ package-lock.json
 *.log
 functions/*
 lambda/mock/index.js
-.temp/**
+/.temp
