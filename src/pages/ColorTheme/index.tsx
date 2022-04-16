@@ -10,7 +10,7 @@ import {
 import { useStore } from '@/store';
 import { copyFishTheme } from './service/fish';
 import { genOmpTheme } from './service/omp';
-import { genItermColorPlist } from './service/iterm';
+import { genTerminalColor } from './service/iterm';
 import { installGitmojiTheme } from './service/gitmoji';
 import { open } from '@/utils/open';
 
@@ -55,7 +55,7 @@ const items: ItemOfSelect[] = [
   {
     label: '[Mac] Generate iterm theme',
     value: 13,
-    service: genItermColorPlist,
+    service: genTerminalColor,
   },
   {
     label: '[All] Install gitmoji theme',

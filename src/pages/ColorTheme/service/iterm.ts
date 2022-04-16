@@ -3,6 +3,7 @@ import plist from 'plist';
 import chroma from 'chroma-js';
 import { Theme } from '@/components';
 import { mkDir, getPath, openDir } from '@/utils/path';
+import { OS_IS_WINDOWS } from '@/utils/const';
 import { Service } from './index';
 
 const genColorData = (color: string) => {
@@ -16,7 +17,40 @@ const genColorData = (color: string) => {
   };
 };
 
-export const genItermColorPlist: Service = (log) => {
+const genWindowTerminalColor: Service = (log) => {
+  const data = {
+    name: 'CanisMinor',
+    black: Theme.Black,
+    red: Theme.Red,
+    green: Theme.Green,
+    yellow: Theme.Yellow,
+    blue: Theme.Blue,
+    purple: Theme.Magenta,
+    cyan: Theme.Cyan,
+    white: Theme.White,
+    brightBlack: Theme.BlackBright,
+    brightRed: Theme.RedBright,
+    brightGreen: Theme.GreenBright,
+    brightYellow: Theme.YellowBright,
+    brightPurple: Theme.MagentaBright,
+    brightCyan: Theme.CyanBright,
+    brightBlue: Theme.BlueBright,
+    brightWhite: Theme.WhiteBright,
+    foreground: Theme.Foreground,
+    background: Theme.Background,
+    selectionBackground: Theme.BlackBright,
+    cursorColor: Theme.White,
+  };
+  const DIR_NAME = 'powershell';
+  mkDir(DIR_NAME);
+  const filename = getPath(DIR_NAME, 'setting.json');
+  fs.writeFileSync(filename, JSON.stringify(data, null, 2));
+  openDir(DIR_NAME);
+  log('output: ' + DIR_NAME);
+  log('generate powershell theme success!');
+};
+
+const genItermColorPlist: Service = (log) => {
   const data = {
     'Ansi 0 Color': genColorData(Theme.Black),
     'Ansi 1 Color': genColorData(Theme.Red),
@@ -52,4 +86,12 @@ export const genItermColorPlist: Service = (log) => {
   openDir(DIR_NAME);
   log('output: ' + DIR_NAME);
   log('generate item theme success!');
+};
+
+export const genTerminalColor: Service = (log) => {
+  if (OS_IS_WINDOWS) {
+    genWindowTerminalColor(log);
+  } else {
+    genItermColorPlist(log);
+  }
 };
