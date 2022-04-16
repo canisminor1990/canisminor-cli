@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.3.0](https://github.com/canisminor1990/canisminor-cli/compare/v1.2.0...v1.3.0) (2022-04-16)
+
+
+### ✨ Features
+
+* add powershell config ([7b0c942](https://github.com/canisminor1990/canisminor-cli/commit/7b0c942))
+
 # [1.2.0](https://github.com/canisminor1990/canisminor-cli/compare/v1.1.3...v1.2.0) (2022-04-15)
 
 
