@@ -1,10 +1,10 @@
 <scheme name="Canis Minor Theme" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2022-04-16T21:23:30</property>
+    <property name="created">2022-04-16T21:30:04</property>
     <property name="ide">WebStorm</property>
     <property name="ideVersion">2021.3.2.0.0</property>
-    <property name="modified">2022-04-16T21:23:33</property>
+    <property name="modified">2022-04-16T21:30:07</property>
     <property name="originalScheme">Canis Minor Theme</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.5" />
@@ -734,8 +734,6 @@
     </option>
     <option name="DEFAULT_HIGHLIGHTED_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="f0c000" />
-        <option name="BACKGROUND" value="2c2100" />
         <option name="ERROR_STRIPE_COLOR" value="352800" />
       </value>
     </option>
