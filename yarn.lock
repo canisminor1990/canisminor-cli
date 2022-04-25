@@ -3233,9 +3233,9 @@ ink-divider@^3.0.0:
     string-width "^4.0.0"
 
 ink-form@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmmirror.com/ink-form/-/ink-form-1.0.1.tgz"
-  integrity sha512-zUJP5EVNkl0bYCNr+wqT7IHYTblp8a/ApiUO6tjDI3Y175k9HdeYx1buDI/w9rWmIYNKCmUPNhzForN17YvQ7w==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ink-form/-/ink-form-1.0.2.tgz#b92f3edde3075459a558094d69972c7da780900b"
+  integrity sha512-coM7HGFI5HunCxIdZyNFX1fA7HCrDMODAJzt3fQXxcL1UzfEMUOoXZ9Ulsrv+LiTOCN252htP+vSsAlFy+3nMg==
   dependencies:
     ink "^3.0.8"
     ink-multi-select "^2.0.0"
