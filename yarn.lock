@@ -1723,7 +1723,7 @@ cli-highlight@^2.1.9:
     parse5-htmlparser2-tree-adapter "^6.0.0"
     yargs "^16.0.0"
 
-cli-spinners@^2.3.0, cli-spinners@^2.6.0:
+cli-spinners@^2.3.0, cli-spinners@^2.6.1:
   version "2.6.1"
   resolved "https://registry.npmmirror.com/cli-spinners/-/cli-spinners-2.6.1.tgz"
   integrity sha512-x/5fWmGMnbKQAaNwN+UZlV79qBLM9JFnJuJ03gIi5whrob0xV0ofNVHy9DhwGdsMJQc2OKv0oGmLzvaqvAVv+g==
@@ -3308,7 +3308,7 @@ ink-select-input@^4.2.0, ink-select-input@^4.2.1:
     figures "^3.2.0"
     lodash.isequal "^4.5.0"
 
-ink-spinner@^4.0.1, ink-spinner@^4.0.3:
+ink-spinner@^4.0.3:
   version "4.0.3"
   resolved "https://registry.npmmirror.com/ink-spinner/-/ink-spinner-4.0.3.tgz"
   integrity sha512-uJ4nbH00MM9fjTJ5xdw0zzvtXMkeGb0WV6dzSWvFv2/+ks6FIhpkt+Ge/eLdh0Ah6Vjw5pLMyNfoHQpRDRVFbQ==
@@ -3337,14 +3337,14 @@ ink-table@^3.0.0:
     object-hash "^2.0.3"
 
 ink-task-list@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmmirror.com/ink-task-list/-/ink-task-list-1.1.0.tgz"
-  integrity sha512-lywEGm1N6lV4r29BlJYdXzlVPXuUGqHmxJyK7OkSrIRS5ChVmiT1Ro8kUyfGSf9rQG0yKCQRhEaoHJDk22f8Nw==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ink-task-list/-/ink-task-list-1.1.1.tgz#6d680882859289e672a93b0292333395c348da70"
+  integrity sha512-Ei0IHXpXFGat39WfycpCt+bQYi6vMZt4LmS50BbjnLo5mAae89cyVkStQDDeAsbdzFh887ksxEupT5XhOxfMbg==
   dependencies:
-    cli-spinners "^2.6.0"
+    cli-spinners "^2.6.1"
     figures "^3.2.0"
-    ink-spinner "^4.0.1"
-    prop-types "^15.7.2"
+    ink-spinner "^4.0.3"
+    prop-types "^15.8.1"
 
 ink-testing-library@^2.1.0:
   version "2.1.0"
