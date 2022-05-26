@@ -76,7 +76,7 @@
   },
   "devDependencies": {
     "@radix-ui/colors": "^0.1.8",
-    "@sindresorhus/tsconfig": "^2.0.0",
+    "@sindresorhus/tsconfig": "^3.0.0",
     "@types/chalk": "^2.2.0",
     "@types/chroma-js": "^2.1.3",
     "@types/fs-extra": "^9.0.13",
