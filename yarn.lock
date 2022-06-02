@@ -6968,9 +6968,9 @@ yargs@^17.0.0:
     yargs-parser "^21.0.0"
 
 yarnhook@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.npmmirror.com/yarnhook/-/yarnhook-0.5.1.tgz"
-  integrity sha512-YPLLXO/PzsFXKvRfsOG/r60WBz8RT7VbkkQv2oHDb6o+EjX0vcUSeA3aw5el2AEWjbcg1sgemjHyCwRIvQxZWw==
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/yarnhook/-/yarnhook-0.5.3.tgz#f6245cea57131236ec10a11c30ea3449d1984f21"
+  integrity sha512-QxCGBYw8XTV4gah0oHjLzg6tJRnj4I5AcM3Ae32V3bWgpXdyZQ7u1m34woOQbc2RrOrjlpivnnwZG461ECvsDQ==
   dependencies:
     execa "^4.0.3"
     find-parent-dir "^0.3.0"
