@@ -3494,9 +3494,9 @@ ink-image@^2.0.0:
     term-img "^4.0.0"
 
 ink-link@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmmirror.com/ink-link/-/ink-link-2.0.0.tgz"
-  integrity sha512-1Ic1uU1df+2ThYUE6n04RXNs7eqQOSmxBlSbOKHIM3biLAkvyaAxzXAI4tOjWZBrS6mP1wZBEGxAH5LozQbeJg==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ink-link/-/ink-link-2.0.1.tgz#5fdb8939f63fce629b929371fb643e5284756bf6"
+  integrity sha512-244mypIguXjMz+vW9F0fMrgFJyDy8ZEoMUYTMW7FOB2Vlb9IqkVZOtDL7sLaeOSQj28L9of591FJR6JpvsF4lA==
   dependencies:
     prop-types "^15.7.2"
     terminal-link "^2.1.1"
