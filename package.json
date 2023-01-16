@@ -123,7 +123,7 @@
     "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.2",
     "yarnhook": "^0.6.0",
-    "zustand": "^3.7.1"
+    "zustand": "^4.3.2"
   },
   "publishConfig": {
     "access": "public",
