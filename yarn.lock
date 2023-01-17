@@ -3742,9 +3742,9 @@ ink-syntax-highlight@^1.0.1:
     cli-highlight "^2.1.9"
 
 ink-tab@^4.2.0:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/ink-tab/-/ink-tab-4.2.3.tgz#ed2acb75050bad6edea388849bcb964ae38bb9c9"
-  integrity sha512-gEGeaPds1kCW2kT4yndOSbP4+NP8eI74Hi/ZVUeph7D3qhO+XRAOtDCEm9WxnM3HE4YOgTuWsJ1EpgSP4Z1OhQ==
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/ink-tab/-/ink-tab-4.3.1.tgz#caddbfeae0fbd4797dcdfe27a23eb39048baf014"
+  integrity sha512-sixiAtQU/4enR3oJS8fSxFA/Y0Tl8JrCtOZIvhJ2ktCFodZYMnS550TxnGMlh0ayVAKKkxHt60OPj399vAiHcg==
 
 ink-table@^3.0.0:
   version "3.0.0"
