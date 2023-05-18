@@ -69,7 +69,7 @@
     "ink-table": "^3.0.0",
     "ink-task-list": "^1.1.0",
     "ink-testing-library": "^2.1.0",
-    "ink-text-input": "^4.0.3",
+    "ink-text-input": "^5.0.1",
     "ink-use-stdout-dimensions": "^1.0.5",
     "meow": "^9.0.0",
     "react": "^17.0.2"
