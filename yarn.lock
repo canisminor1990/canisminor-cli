@@ -6529,10 +6529,10 @@ schema-utils@^4.0.0:
     ajv-formats "^2.1.1"
     ajv-keywords "^5.0.0"
 
-semantic-release-config-gitmoji@^1.2.4:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/semantic-release-config-gitmoji/-/semantic-release-config-gitmoji-1.4.3.tgz#90f51c4e83b297ce432eae0939ce914e0a28e8cf"
-  integrity sha512-fprTpMq7CiCwyuqVHBf0GOKLrennSF89foaHyb1tOkfRWfMqX45iO/m4vZ7gy+m3eXnyWtp1PCc6jKPNbfC8Kw==
+semantic-release-config-gitmoji@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/semantic-release-config-gitmoji/-/semantic-release-config-gitmoji-1.5.0.tgz#634b436a809545b848ec6ebde55b281cc828a3e0"
+  integrity sha512-Eh4UiYiqQ+JKmWHpKKDbH/KDbqhfrKcKW1cbTFQtrI9NiBQLpUvBuAIbqin+1NsVxcPVKLw5L2UOD3jy04+Jng==
   dependencies:
     "@gitmoji/commit-types" "1.1.5"
     "@semantic-release/changelog" "^6"
