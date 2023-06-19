@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@ardatan/sync-fetch@^0":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@ardatan/sync-fetch/-/sync-fetch-0.0.1.tgz#3385d3feedceb60a896518a1db857ec1e945348f"
+  integrity sha512-xhlTqH0m31mnsG0tIP4ETgfSB6gXDaYYsUWTrlUV93fFQPI9dd8hE0Ot6MHLCtqgB32hwJAC3YZMWlXZw7AleA==
+  dependencies:
+    node-fetch "^2.6.1"
+
 "@babel/code-frame@^7.0.0":
   version "7.16.7"
   resolved "https://registry.npmmirror.com/@babel/code-frame/-/code-frame-7.16.7.tgz"
@@ -2334,14 +2341,17 @@ conventional-changelog-angular@^5.0.0, conventional-changelog-angular@^5.0.11:
     compare-func "^2.0.0"
     q "^1.5.1"
 
-conventional-changelog-gitmoji-config@1.4.7:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-gitmoji-config/-/conventional-changelog-gitmoji-config-1.4.7.tgz#cda4a36bb5679b26b9f4a09a1ce2a06d7d2560e9"
-  integrity sha512-SQB7RZvhSld2OgcIeXOQ8jqFUan3Jype6oaPcRK71HTIKvFmmKVfgfHVZwNIk9Ufybxf791rtmrmPHyUKrrqdg==
+conventional-changelog-gitmoji-config@1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-gitmoji-config/-/conventional-changelog-gitmoji-config-1.5.2.tgz#ff447978e21e30b1e1be3fd2cb3b784c0438cb11"
+  integrity sha512-m9OkbMTiLZzEg+pYoAWV1Xq66o4/Y8ElqdibJlsAz+EEmUTp7AZ011F/w99SVvf6MwT17m/FEa+fqUZoTsejpQ==
   dependencies:
+    "@ardatan/sync-fetch" "^0"
     "@gitmoji/commit-types" "1.1.5"
     "@gitmoji/parser-opts" "1.4.0"
-    cosmiconfig "^7.0.0"
+    cosmiconfig "^7"
+    lodash "^4"
+    pangu "^4"
 
 conventional-changelog-writer@^5.0.0:
   version "5.0.1"
@@ -4793,7 +4803,7 @@ lodash.uniqby@^4.7.0:
   resolved "https://registry.npmmirror.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz"
   integrity sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==
 
-lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
+lodash@^4, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
   version "4.17.21"
   resolved "https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -5216,6 +5226,13 @@ node-emoji@^1.11.0:
   integrity sha512-wo2DpQkQp7Sjm2A0cq+sN7EHKO6Sl0ctXeBdFZrL9T9+UywORbufTcTZxom8YqpLQt/FqNMUkOpkZrJVYSKD3A==
   dependencies:
     lodash "^4.17.21"
+
+node-fetch@^2.6.1:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.11.tgz#cde7fc71deef3131ef80a738919f999e6edfff25"
+  integrity sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==
+  dependencies:
+    whatwg-url "^5.0.0"
 
 node-fetch@^2.6.7:
   version "2.6.7"
@@ -5775,6 +5792,11 @@ pacote@^15.0.0, pacote@^15.0.8, pacote@^15.1.3:
     sigstore "^1.3.0"
     ssri "^10.0.0"
     tar "^6.1.11"
+
+pangu@^4:
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/pangu/-/pangu-4.0.7.tgz#2a40347733b004a040d011de460cc313c10391c9"
+  integrity sha512-weZKJIwwy5gjt4STGVUH9bix3BGk7wZ2ahtIypwe3e/mllsrIZIvtfLx1dPX56GcpZFOCFKmeqI1qVuB9enRzA==
 
 parent-module@^1.0.0:
   version "1.0.1"
@@ -6529,10 +6551,10 @@ schema-utils@^4.0.0:
     ajv-formats "^2.1.1"
     ajv-keywords "^5.0.0"
 
-semantic-release-config-gitmoji@^1.2.4:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/semantic-release-config-gitmoji/-/semantic-release-config-gitmoji-1.4.3.tgz#90f51c4e83b297ce432eae0939ce914e0a28e8cf"
-  integrity sha512-fprTpMq7CiCwyuqVHBf0GOKLrennSF89foaHyb1tOkfRWfMqX45iO/m4vZ7gy+m3eXnyWtp1PCc6jKPNbfC8Kw==
+semantic-release-config-gitmoji@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/semantic-release-config-gitmoji/-/semantic-release-config-gitmoji-1.5.3.tgz#4fe177a0b732f561f758746b0e3d8262334312c7"
+  integrity sha512-tuh8CXNVBoYIvyQ9MqzBciRv1+Jd613JduZc8bB8uIsSCfaDRKDMi7fuRwF2NVeet2aeF3sKAcjMW3Vou2GEnQ==
   dependencies:
     "@gitmoji/commit-types" "1.1.5"
     "@semantic-release/changelog" "^6"
@@ -6540,7 +6562,7 @@ semantic-release-config-gitmoji@^1.2.4:
     "@semantic-release/github" "npm:@achingbrain/semantic-release-github"
     "@semrel-extra/npm" "^1"
     "@types/semantic-release" "^17.2.0"
-    conventional-changelog-gitmoji-config "1.4.7"
+    conventional-changelog-gitmoji-config "1.5.2"
 
 semantic-release@^21.0.2:
   version "21.0.2"
