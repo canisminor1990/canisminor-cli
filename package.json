@@ -98,7 +98,7 @@
     "cache-loader": "^4.1.0",
     "chroma-js": "^2.4.2",
     "clean-webpack-plugin": "^4.0.0",
-    "commitlint": "^16.2.3",
+    "commitlint": "^17.6.6",
     "commitlint-config-gitmoji": "^2.2.5",
     "copy-webpack-plugin": "^11.0.0",
     "eslint": "^8.12.0",
